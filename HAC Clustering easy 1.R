@@ -7,19 +7,19 @@ View(dissimilarity)
 #converting the dataset into distance matrix type
 
 dissimilarity=as.dist(dissimilarity)
-jpeg('dendrogram.jpg')     #to save plot output
+#jpeg('dendrogram.jpg')     #to save plot output
 
 
 #diss=dist(dissimilarity,method='canberra')
 
 
-clust1=chclust(dissimilarity,method = "coniss")     #To plot the dendogram using coniss method
+#clust1=chclust(dissimilarity,method = "coniss")     #To plot the dendogram using coniss method
 
-#clust1=chclust(dissimilarity,method = "conslink")    #To plot the dendogram using conslink method
+clust1=chclust(dissimilarity,method = "conslink")    #To plot the dendogram using conslink method
 
 plot(clust1,hang=-1)
   
-dev.off()           
+#dev.off()           
 
 #creating the hclust object to implement hierarchial clustering
 
@@ -32,7 +32,7 @@ dissimilarity=as.matrix(dissimilarity) #To convert dissimilarity into a data mat
 
 
 # Visualising the clusters
-jpeg('HAC.jpg')
+#jpeg('HAC.jpg')
 library(cluster)
 clusplot(dissimilarity,
          y_hc,
@@ -46,4 +46,4 @@ clusplot(dissimilarity,
         diss=TRUE,
         
 )
-dev.off()
+#dev.off()
